@@ -9,6 +9,7 @@ class RiveButton extends StatefulWidget {
   final Color? hoverExitColor;
   final double? fontSize;
   final double? bottomPadding;
+  final void Function() onTap;
   const RiveButton({
     super.key,
     this.path,
@@ -17,6 +18,7 @@ class RiveButton extends StatefulWidget {
     this.hoverExitColor,
     this.fontSize,
     this.bottomPadding,
+    required this.onTap,
   });
 
   @override
@@ -32,6 +34,7 @@ class _RiveButtonState extends State<RiveButton> with TickerProviderStateMixin {
   bool isPressed = false;
 
   List<Artboard> artboards = [];
+  List<SMITrigger?> inputs = [];
 
   @override
   void initState() {
@@ -67,6 +70,7 @@ class _RiveButtonState extends State<RiveButton> with TickerProviderStateMixin {
     if (_controller != null) {
       artboard.addController(_controller!);
       input = _controller!.findInput<bool>('pressTrigger') as SMITrigger;
+      inputs.add(input);
     }
   }
 
@@ -78,7 +82,12 @@ class _RiveButtonState extends State<RiveButton> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: _hitBump,
+      onTap: () async {
+        widget.onTap();
+        _hitBump();
+        await Future.delayed(const Duration(milliseconds: 200));
+        _hitBump();
+      },
       behavior: HitTestBehavior.opaque,
       child: MouseRegion(
         opaque: false,

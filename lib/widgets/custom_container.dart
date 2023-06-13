@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_brutalism/screens/home_page.dart';
 import 'package:portfolio_brutalism/utils/constants.dart';
+import 'package:portfolio_brutalism/widgets/green_lines_widget.dart';
 
 class NeoBrutalismContainer extends StatelessWidget {
   final Widget child;
@@ -96,15 +96,41 @@ class TitleTVWidget extends StatelessWidget {
     return Stack(
       children: [
         const GreenLinesWidget(),
-        Positioned.fill(
-          child: Center(
-            child: Text(
-              "Cavin Macwan",
-              style: TextStyle(
-                color: Colors.green.shade400,
-                fontSize: 30,
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                "Welcome",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.green.shade400,
+                  fontSize: 25,
+                ),
               ),
-            ),
+              const SizedBox(height: 30),
+              Text(
+                "This portofolio is made in Flutter💙 by Cavin",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.green.shade400,
+                  fontSize: 20,
+                  height: 1.1,
+                ),
+              ),
+              const SizedBox(height: 30),
+              Text(
+                "Tap on the buttons below to switch to a different page",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.green.shade400,
+                  fontSize: 18,
+                  height: 1.1,
+                ),
+              )
+            ],
           ),
         ),
       ],
