@@ -121,7 +121,7 @@ class _RiveButtonState extends State<RiveButton> with TickerProviderStateMixin {
             );
           },
           child: artboards.isEmpty
-              ? const CircularProgressIndicator()
+              ? const SizedBox.shrink()
               : Rive(artboard: artboards[0]),
         ),
       ),

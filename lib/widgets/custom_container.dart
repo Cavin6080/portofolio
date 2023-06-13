@@ -98,39 +98,42 @@ class TitleTVWidget extends StatelessWidget {
         const GreenLinesWidget(),
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                "Welcome",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.green.shade400,
-                  fontSize: 25,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox(height: 30),
+                Text(
+                  "Welcome",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.green.shade400,
+                    fontSize: 25,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 30),
-              Text(
-                "This portofolio is made in Flutter💙 by Cavin",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.green.shade400,
-                  fontSize: 20,
-                  height: 1.1,
+                const SizedBox(height: 30),
+                Text(
+                  "This portofolio is made in Flutter💙 by Cavin",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.green.shade400,
+                    fontSize: 20,
+                    height: 1.1,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 30),
-              Text(
-                "Tap on the buttons below to switch to a different page",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.green.shade400,
-                  fontSize: 18,
-                  height: 1.1,
-                ),
-              )
-            ],
+                const SizedBox(height: 30),
+                Text(
+                  "Tap on the buttons below to switch to a different page",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.green.shade400,
+                    fontSize: 18,
+                    height: 1.1,
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ],

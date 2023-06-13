@@ -23,6 +23,16 @@ class AboutPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Center(
+                child: Text(
+                  "ABOUT",
+                  style: TextStyle(
+                    color: Color(0XFF003d55),
+                    fontSize: 25,
+                  ),
+                ),
+              ),
+              SizedBox(height: 40),
               TypeWritingTextWidget(
                 title:
                     "He's Cavin Macwan and He's a Flutter Developer at 7Span",

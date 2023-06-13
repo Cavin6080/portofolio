@@ -14,7 +14,7 @@ class GreenLinesWidget extends StatelessWidget {
       padding: EdgeInsets.zero,
       itemBuilder: (context, index) => Divider(
         color: color ?? Colors.green.withOpacity(0.2),
-        height: 8,
+        height: 4,
         thickness: 2,
       ),
     );
